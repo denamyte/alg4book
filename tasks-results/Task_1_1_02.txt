@@ -1,0 +1,4 @@
+Expr: (1 + 2.236) / 2 = 1.618; type: double
+Expr: 1 + 2 + 3 + 4.0 =  10.0; type: double
+Expr: 4.1 >= 4        =  true; type: boolean
+Expr: 1 + 2 + "3"     =    33; type: String
