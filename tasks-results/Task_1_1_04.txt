@@ -1,0 +1,4 @@
+if (a > b) then c = 0;          // There is not "if...then" or "then" operators in Java
+if a > b { c = 0; }             // The parentheses are absent around "a > b"
+if (a > b) c = 0;               // This is fine
+if (a > b) c = 0 else b = 0;    // A semicolon is absent after "c = 0"
