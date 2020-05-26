@@ -1,0 +1,12 @@
+System.out.println('b') will print the symbol 'b':
+b
+
+System.out.println('b' + 'c'): chars 'b' and 'c' get 
+converted to integers (98 + 99), according to the rule 
+of character summation, then they get summed up and printed:
+197
+
+System.out.println((char) ('a' + 4)): ('a' + 4)
+get converted to (97 + 4), summed up (101) and converted
+to the char 'e', then printed:
+e
