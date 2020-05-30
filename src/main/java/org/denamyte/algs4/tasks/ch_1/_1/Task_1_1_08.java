@@ -1,7 +1,7 @@
 package org.denamyte.algs4.tasks.ch_1._1;
 
 /**
- * <img src="../../docs/Task.1.1.08.png" alt="Task screenshot">
+ * <img src="../../docs/ch_1/_1/Task.1.1.08.png" alt="Task screenshot">
  */
 public class Task_1_1_08 {
     public static void main(String[] args) {

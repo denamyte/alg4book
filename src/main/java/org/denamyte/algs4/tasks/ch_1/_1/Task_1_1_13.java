@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
 /**
- * <img src="../../docs/Task.1.1.13.png" alt="Task screenshot">
+ * <img src="../../docs/ch_1/_1/Task.1.1.13.png" alt="Task screenshot">
  */
 public class Task_1_1_13 {
 

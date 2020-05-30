@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdRandom;
 import java.util.Arrays;
 
 /**
- * <img src="../../docs/Task.1.1.05.png" alt="Task screenshot">
+ * <img src="../../docs/ch_1/_1/Task.1.1.05.png" alt="Task screenshot">
  */
 @SuppressWarnings("FieldCanBeLocal")
 public class Task_1_1_05 {
