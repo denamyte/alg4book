@@ -1,0 +1,9 @@
+mystery(2, 25): 50 
+mystery(3, 11): 33 
+mystery(5, 7): 35 
+The mystery function with + signs multiplies a by b 
+
+mysteryMult(2, 25): 33554432 
+mysteryMult(3, 11): 177147 
+mysteryMult(5, 7): 78125 
+The mystery function with * signs raises the number a to the power of b 
