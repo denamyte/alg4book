@@ -1,0 +1,71 @@
+Integer range: [0..5001); looking for: 2062
+ lo: 0; hi: 5000
+  lo: 0; hi: 2499
+   lo: 1250; hi: 2499
+    lo: 1875; hi: 2499
+     lo: 1875; hi: 2186
+      lo: 2031; hi: 2186
+       lo: 2031; hi: 2107
+        lo: 2031; hi: 2068
+         lo: 2050; hi: 2068
+          lo: 2060; hi: 2068
+           lo: 2060; hi: 2063
+            lo: 2062; hi: 2063
+Found = 2062
+
+Integer range: [0..5001); looking for: 3589
+ lo: 0; hi: 5000
+  lo: 2501; hi: 5000
+   lo: 2501; hi: 3749
+    lo: 3126; hi: 3749
+     lo: 3438; hi: 3749
+      lo: 3438; hi: 3592
+       lo: 3516; hi: 3592
+        lo: 3555; hi: 3592
+         lo: 3574; hi: 3592
+          lo: 3584; hi: 3592
+           lo: 3589; hi: 3592
+            lo: 3589; hi: 3589
+Found = 3589
+
+Integer range: [0..5001); looking for: 3964
+ lo: 0; hi: 5000
+  lo: 2501; hi: 5000
+   lo: 3751; hi: 5000
+    lo: 3751; hi: 4374
+     lo: 3751; hi: 4061
+      lo: 3907; hi: 4061
+       lo: 3907; hi: 3983
+        lo: 3946; hi: 3983
+Found = 3964
+
+Integer range: [0..5001); looking for: 617
+ lo: 0; hi: 5000
+  lo: 0; hi: 2499
+   lo: 0; hi: 1248
+    lo: 0; hi: 623
+     lo: 312; hi: 623
+      lo: 468; hi: 623
+       lo: 546; hi: 623
+        lo: 585; hi: 623
+         lo: 605; hi: 623
+          lo: 615; hi: 623
+           lo: 615; hi: 618
+            lo: 617; hi: 618
+Found = 617
+
+Integer range: [0..5001); looking for: 318
+ lo: 0; hi: 5000
+  lo: 0; hi: 2499
+   lo: 0; hi: 1248
+    lo: 0; hi: 623
+     lo: 312; hi: 623
+      lo: 312; hi: 466
+       lo: 312; hi: 388
+        lo: 312; hi: 349
+         lo: 312; hi: 329
+          lo: 312; hi: 319
+           lo: 316; hi: 319
+            lo: 318; hi: 319
+Found = 318
+
