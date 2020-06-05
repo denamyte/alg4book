@@ -12,6 +12,6 @@ public class Task_1_1_22 {
     public static final int LO = 0, HI = 5001, SEARCH_COUNT = 5;
 
     public static void main(String[] args) {
-        BinarySearchTrace.startSearch(IntStream.range(LO, HI).toArray(), LO, HI);
+        BinarySearchTrace.startSearch(IntStream.range(LO, HI).toArray(), LO, HI, SEARCH_COUNT);
     }
 }

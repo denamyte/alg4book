@@ -3,13 +3,12 @@ package org.denamyte.algs4.code;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import org.apache.commons.lang3.StringUtils;
-import org.denamyte.algs4.tasks.ch_1._1.Task_1_1_22;
 
 public class BinarySearchTrace {
 
-    public static void startSearch(int[] array, int lo, int hi) {
+    public static void startSearch(int[] array, int lo, int hi, int searchCount) {
         StdRandom.setSeed(System.currentTimeMillis());
-        for (int i = 0; i < Task_1_1_22.SEARCH_COUNT; i++) {
+        for (int i = 0; i < searchCount; i++) {
             int toFind = StdRandom.uniform(lo, hi);
             StdOut.printf("Integer range: [%d..%d); looking for: %d\n", lo, hi, toFind);
             StdOut.printf("Found = %d\n\n", rank(toFind, array));
