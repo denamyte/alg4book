@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.StdOut;
  */
 public class Task_1_1_17 {
     public static void main(String[] args) {
-        // no coding decision
+        // no coding solution
         StdOut.println(exR2(6));
     }
 

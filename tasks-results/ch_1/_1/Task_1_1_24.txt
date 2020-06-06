@@ -1,0 +1,15 @@
+Depth:  1; p:       105; q:        24;
+Depth:  2; p:        24; q:         9;
+Depth:  3; p:         9; q:         6;
+Depth:  4; p:         6; q:         3;
+Depth:  5; p:         3; q:         0;
+
+Depth:  1; p:   1111111; q:   1234567;
+Depth:  2; p:   1234567; q:   1111111;
+Depth:  3; p:   1111111; q:    123456;
+Depth:  4; p:    123456; q:         7;
+Depth:  5; p:         7; q:         4;
+Depth:  6; p:         4; q:         3;
+Depth:  7; p:         3; q:         1;
+Depth:  8; p:         1; q:         0;
+
