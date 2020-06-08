@@ -8,21 +8,24 @@ import edu.princeton.cs.algs4.StdRandom;
  */
 public class Task_1_1_13 {
 
-    private static final int ROWS_COUNT = 5, COLUMNS_COUNT = 10;
-    private static final int[][] ARRAY = new int[ROWS_COUNT][COLUMNS_COUNT];
+    private static final int
+            ROW_COUNT = 5,
+            COLUMN_COUNT = 10,
+            MAX_VALUE = 1000;
+    private static final int[][] ARRAY = new int[ROW_COUNT][COLUMN_COUNT];
 
     static {
         StdRandom.setSeed(System.currentTimeMillis());
-        for (int row = 0; row < ROWS_COUNT; row++)
-            for (int column = 0; column < COLUMNS_COUNT; column++)
-                ARRAY[row][column] = StdRandom.uniform(1000);
+        for (int row = 0; row < ROW_COUNT; row++)
+            for (int column = 0; column < COLUMN_COUNT; column++)
+                ARRAY[row][column] = StdRandom.uniform(MAX_VALUE);
     }
 
     public static void main(String[] args) {
         StdOut.println("Printing normally:");
-        printNormal(ARRAY, ROWS_COUNT, COLUMNS_COUNT);
+        printNormal(ARRAY, ROW_COUNT, COLUMN_COUNT);
         StdOut.println("\nPrinting after transposition:");
-        printTransposition(ARRAY, ROWS_COUNT, COLUMNS_COUNT);
+        printTransposition(ARRAY, ROW_COUNT, COLUMN_COUNT);
     }
 
     @SuppressWarnings("SameParameterValue")

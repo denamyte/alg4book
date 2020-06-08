@@ -1,14 +1,14 @@
-Descending algorithm:
+Descending recursive algorithm:
 ln(1000!) = 5912.128178
 ln(2000!) = 13206.524351
 ln(5000!) = 37591.143509
 
-Ascending algorithm:
+Ascending recursive algorithm:
 ln(1000!) = 5912.128178
 ln(2000!) = 13206.524351
 ln(5000!) = 37591.143509
 
-Without recursion:
+An algorithm without recursion:
 ln(1000!) = 5912.128178
 ln(2000!) = 13206.524351
 ln(5000!) = 37591.143509

@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.StackOverflowError
+	at org.denamyte.algs4.tasks.ch_1._1.Task_1_1_17.exR2(Task_1_1_17.java:15)
+....

@@ -12,12 +12,12 @@ import java.util.List;
 public class Task_1_1_20 {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>(Arrays.asList(1000, 2000, 5000));
-        StdOut.println("Descending algorithm:");
+        StdOut.println("Descending recursive algorithm:");
         list.forEach(n -> StdOut.printf("ln(%d!) = %f\n", n, lnNFactorial(n)));
-        StdOut.println("\nAscending algorithm:");
+        StdOut.println("\nAscending recursive algorithm:");
         list.forEach(n -> StdOut.printf("ln(%d!) = %f\n", n, lnNFactorialAsc(n, 1, 0)));
         list.addAll(Arrays.asList(12000, 50_000, 100_000, 1_000_000));
-        StdOut.println("\nWithout recursion:");
+        StdOut.println("\nAn algorithm without recursion:");
         list.forEach(n -> StdOut.printf("ln(%d!) = %f\n", n, lnNFactorialNoRec(n)));
     }
 

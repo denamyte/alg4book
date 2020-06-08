@@ -12,15 +12,18 @@ public class Task_1_1_14 {
     private static final int base = 2;
     public static void main(String[] args) {
         Stream.of(
-                Math.pow(2, 4) - 1,   // result = 3
-                Math.pow(2, 4) + 1,   // result = 4
-                Math.pow(2, 8) - 1,   // result = 7
-                Math.pow(2, 8) + 1,   // result = 8
-                Math.pow(2, 8),   // result = 8
-                Math.pow(2, 11) - 1,   // result = 10
-                Math.pow(2, 11) + 1,   // result = 11
-                Math.pow(2, 25) - 1,   // result = 24
-                Math.pow(2, 25) + 1    // result = 25
+                Math.pow(2, 4) - 1,     // result = 3
+                Math.pow(2, 4) + 1,     // result = 4
+                Math.pow(2, 8) - 1,     // result = 7
+                Math.pow(2, 8) + 1,     // result = 8
+                Math.pow(2, 8),         // result = 8
+                Math.pow(2, 11) - 1,    // result = 10
+                Math.pow(2, 11) + 1,    // result = 11 ??
+                Math.pow(2, 25) - 1,    // result = 24
+                Math.pow(2, 25) + 1,    // result = 25
+                Math.pow(2, 28) - 1,    // result = 27
+                Math.pow(2, 28),        // result = 28
+                Math.pow(2, 28) + 1     // result = 28
         )
                 .map(Double::intValue)
                 .forEach(i -> print(base, i, lg(i)));
@@ -36,12 +39,11 @@ public class Task_1_1_14 {
     }
 
     public static int lg2(int logBase, int n, int lo, int hi) {
-        if (lo == hi) return lo;
+        if (hi - lo <= 1) return lo;
         int mid = (lo + hi) / 2;
-        if (mid == lo) return mid;
         int elevated = logBase << mid - 1;
         if (elevated > n) {
-            return lg2(logBase, n, lo, mid - 1);
+            return lg2(logBase, n, lo, mid);
         }
         if (elevated < n) {
             return lg2(logBase, n, mid, hi);
@@ -50,6 +52,6 @@ public class Task_1_1_14 {
     }
 
     private static void print(int base, int n, int result) {
-        StdOut.printf("N: %8d; Log2: %11.8f; Result: %d \n", n, Math.log10(n) / Math.log10(base), result);
+        StdOut.printf("N: %10d; Log2: %13.10f; Result: %d \n", n, Math.log10(n) / Math.log10(base), result);
     }
 }
