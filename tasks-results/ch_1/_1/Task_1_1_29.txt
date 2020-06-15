@@ -1,0 +1,50 @@
+Array: [0, 0, 3, 4, 4, 5, 6, 7, 8, 9, 11, 11, 12, 12, 12, 15, 16, 18, 19, 19]
+Key  : 12
+Less than the key count: 12
+Equal to the key count : 3
+
+Array: [0, 2, 2, 3, 4, 6, 7, 8, 8, 8, 10, 11, 12, 12, 13, 17, 18, 19, 19, 19]
+Key  : 6
+Less than the key count: 5
+Equal to the key count : 1
+
+Array: [3, 3, 3, 3, 6, 9, 10, 11, 11, 12, 12, 12, 13, 14, 15, 16, 17, 17, 18, 19]
+Key  : 13
+Less than the key count: 12
+Equal to the key count : 1
+
+Array: [0, 2, 2, 5, 7, 8, 9, 9, 11, 11, 12, 13, 13, 14, 15, 15, 15, 16, 18, 19]
+Key  : 6
+Less than the key count: 4
+Equal to the key count : 0
+
+Array: [0, 2, 3, 5, 5, 5, 5, 7, 7, 8, 8, 8, 9, 10, 11, 13, 13, 16, 16, 19]
+Key  : 17
+Less than the key count: 19
+Equal to the key count : 0
+
+Array: [0, 0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, 11, 11, 12, 15, 17, 18]
+Key  : 10
+Less than the key count: 12
+Equal to the key count : 1
+
+Array: [0, 0, 2, 2, 4, 7, 7, 7, 7, 8, 10, 10, 12, 12, 14, 17, 18, 18, 19, 19]
+Key  : 3
+Less than the key count: 4
+Equal to the key count : 0
+
+Array: [0, 0, 1, 1, 2, 3, 3, 3, 3, 6, 7, 7, 11, 13, 14, 15, 16, 16, 18, 19]
+Key  : 5
+Less than the key count: 9
+Equal to the key count : 0
+
+Array: [0, 0, 0, 1, 1, 2, 5, 5, 5, 6, 6, 8, 8, 12, 12, 13, 14, 14, 16, 19]
+Key  : 10
+Less than the key count: 13
+Equal to the key count : 0
+
+Array: [0, 2, 2, 3, 4, 4, 5, 6, 6, 7, 7, 7, 8, 8, 13, 13, 14, 14, 17, 18]
+Key  : 13
+Less than the key count: 14
+Equal to the key count : 2
+
