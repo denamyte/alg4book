@@ -2,7 +2,7 @@ package org.denamyte.algs4.tasks.ch_1._1;
 
 import edu.princeton.cs.algs4.StdRandom;
 import org.denamyte.algs4.code.BinarySearchNoDuplicates;
-import org.denamyte.algs4.code.Utils;
+import org.denamyte.algs4.code.utils.Utils;
 
 import java.util.Arrays;
 

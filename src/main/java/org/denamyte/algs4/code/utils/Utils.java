@@ -1,4 +1,4 @@
-package org.denamyte.algs4.code;
+package org.denamyte.algs4.code.utils;
 
 import edu.princeton.cs.algs4.StdRandom;
 
