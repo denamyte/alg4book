@@ -1,6 +1,7 @@
 package org.denamyte.algs4.tasks.ch_1._1;
 
 import edu.princeton.cs.algs4.StdOut;
+import org.denamyte.algs4.code.utils.Utils;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -22,8 +23,7 @@ public class Task_1_1_03 {
 
     public static class EqualNotEqual {
         public static void main(String[] args) {
-            if (args.length != 3)
-                throw new IllegalArgumentException();
+            Utils.checkArgsLength(args.length, 3);
             int[] a = new int[3];
             for (int i = 0; i < 3; i++) {
                 a[i] = Integer.parseInt(args[i]);

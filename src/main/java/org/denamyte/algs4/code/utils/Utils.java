@@ -23,4 +23,32 @@ public class Utils {
         Arrays.sort(array);
         return array;
     }
+
+    public static void checkArgsLength(int actual, int estimated) {
+        if (actual != estimated) {
+            throw new IllegalArgumentException(
+                    String.format("The actual arguments' length (%d) is not equal to the estimated one (%d)",
+                                  actual, estimated));
+        }
+    }
+
+    public static int checkInt(int a, Integer gte, Integer lte) {
+        if (gte != null && a < gte) {
+            throw new IllegalArgumentException(String.format("The value (actual = %d) should be greater than or equal to %d", a, gte));
+        }
+        if (lte != null && a > lte) {
+            throw new IllegalArgumentException(String.format("The value (actual = %d) should be less than or equal to %d", a, lte));
+        }
+        return a;
+    }
+
+    public static double checkDouble(double a, Double gte, Double lte) {
+        if (gte != null && a < gte) {
+            throw new IllegalArgumentException(String.format("The value (actual = %f) should be greater than or equal to %f", a, gte));
+        }
+        if (lte != null && a > lte) {
+            throw new IllegalArgumentException(String.format("The value (actual = %f) should be less than or equal to %f", a, lte));
+        }
+        return a;
+    }
 }
