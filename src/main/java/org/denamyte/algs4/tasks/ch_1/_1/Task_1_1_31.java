@@ -53,8 +53,8 @@ public class Task_1_1_31 {
     }
 
     public static boolean tossACoin(double probability) {
-        double coin = StdRandom.uniform(0.0, 1.0);
-        return coin <= probability;
+        double side = StdRandom.uniform(0.0, 1.0);
+        return side <= probability;
     }
 
     public static Point[] calcPointCoordinates(int pointCount) {
