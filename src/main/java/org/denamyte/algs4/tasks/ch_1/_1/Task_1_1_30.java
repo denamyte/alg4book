@@ -4,6 +4,7 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import org.denamyte.algs4.code.EuclidsAlgorithm;
 import org.denamyte.algs4.code.utils.ParamsInt2;
+import org.denamyte.algs4.code.utils.Utils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +17,7 @@ public class Task_1_1_30 {
     private static final Map<ParamsInt2, Boolean> primeMap = new HashMap<>();
 
     public static void main(String[] args) {
-        while (stdInCheck()) {
+        while (Utils.stdInInviteAndCheck("Enter an integer (square matrix size) in the range [1..100]")) {
             int size = StdIn.readInt();
             if (size < 1 || size > 100) {
                 StdOut.printf("The matrix size must be in range. Integer %d is out of range [1..100]\n", size);
@@ -30,11 +31,6 @@ public class Task_1_1_30 {
             }
             print(primes);
         }
-    }
-
-    public static boolean stdInCheck() {
-        StdOut.println("Enter an integer (square matrix size) in the range [1..100]");
-        return !StdIn.isEmpty();
     }
 
     public static boolean relativelyPrime(int i, int j) {

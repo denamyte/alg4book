@@ -1,5 +1,7 @@
 package org.denamyte.algs4.code.utils;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.Arrays;
@@ -50,5 +52,15 @@ public class Utils {
             throw new IllegalArgumentException(String.format("The value (actual = %f) should be less than or equal to %f", a, lte));
         }
         return a;
+    }
+
+    /**
+     * Use this method in a while operator when you expect users to successively input values
+     * @param invite A text to print in the console to invite users to enter a value.
+     * @return A flag that means the input stream is not empty.
+     */
+    public static boolean stdInInviteAndCheck(String invite) {
+        StdOut.println(invite);
+        return !StdIn.isEmpty();
     }
 }

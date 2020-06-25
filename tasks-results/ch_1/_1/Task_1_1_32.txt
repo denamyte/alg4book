@@ -1,0 +1,16 @@
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Enter next double in the interval (0.000000, 1.000000)
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Enter next double in the interval (0.000000, 1.000000)
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+Enter next double in the interval (0.000000, 1.000000)
+[1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+Enter next double in the interval (0.000000, 1.000000)
+[1, 1, 0, 0, 0, 0, 0, 0, 0, 1]
+Enter next double in the interval (0.000000, 1.000000)
+[2, 1, 0, 0, 0, 0, 0, 0, 0, 1]
+Enter next double in the interval (0.000000, 1.000000)
+[2, 2, 0, 0, 0, 0, 0, 0, 0, 1]
+Enter next double in the interval (0.000000, 1.000000)
+[2, 2, 0, 0, 0, 1, 0, 0, 0, 1]
+Enter next double in the interval (0.000000, 1.000000)
