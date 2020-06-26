@@ -2,7 +2,7 @@ package org.denamyte.algs4.tasks.ch_1._1;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
-import org.denamyte.algs4.code.Histogram;
+import org.apache.commons.lang3.ArrayUtils;
 import org.denamyte.algs4.code.utils.Utils;
 
 import java.util.Arrays;
@@ -18,7 +18,7 @@ public class Task_1_1_15 {
         StdRandom.setSeed(System.currentTimeMillis());
         for (int i = 0; i < COUNT; i++) {
             int[] array = Utils.createIntArraySorted(LENGTH, LO, HI);
-            int[] histogram = Histogram.histogram(array, HIST_LENGTH);
+            int[] histogram = histogram(array, HIST_LENGTH);
             printHist(array, histogram);
         }
     }
@@ -32,4 +32,21 @@ public class Task_1_1_15 {
         StdOut.println();
     }
 
+    /**
+     * @param a An array containing some integer values
+     * @param m The upper border in a range [0..m]
+     * @return an array of length <b><i>m</i></b> whose <b><i>i</i></b>th entry is the number
+     * of times the integer <b><i>i</i></b> appeared in the argument array
+     */
+    private static int[] histogram(int[] a, int m) {
+        if (ArrayUtils.getLength(a) == 0 || m <= 0) {
+            throw new IllegalArgumentException("either the array a has zero length or the variable m <= 0");
+        }
+        int[] hist = new int[m];
+        for (int i = 0; i < m; i++) {
+            int ii = i;
+            hist[i] = (int) Arrays.stream(a).filter(value -> value == ii).count();
+        }
+        return hist;
+    }
 }
