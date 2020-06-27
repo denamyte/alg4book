@@ -3,9 +3,14 @@ package org.denamyte.algs4.tasks.ch_1._1;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.experimental.Accessors;
 import org.denamyte.algs4.code.utils.Utils;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 import java.util.Arrays;
 
 /**
@@ -27,7 +32,21 @@ public class Task_1_1_32 {
 
     }
 
+    public static StdRectParams calcStdRectParam(Rectangle2D.Double rect, double borderWidth,
+                                                 double xFactor, double yFactor) {
+        double stdHalfW = xFactor * ((rect.getWidth() - borderWidth) / 2);
+        double stdHalfH = yFactor * ((rect.getHeight() - borderWidth) / 2);
+        double stdCenterX = stdHalfW + xFactor * (rect.getX() + borderWidth / 2);
+        double stdCenterY = stdHalfH + yFactor * (rect.getY() + borderWidth / 2);
+        return new StdRectParams(stdCenterX, stdCenterY, stdHalfW, stdHalfH);
+    }
+
+    public static double toStdPen(double radius) {
+        return radius / 512;
+    }
+
     public static class HistogramDoubleFrequencies {
+
         private final int n;
         private final double l;
         private final double r;
@@ -47,7 +66,22 @@ public class Task_1_1_32 {
             this.r = r;
             diff = r - l;
             hist = new int[n];
-            histogram = new Histogram(1024, 512);
+            double width = 1024, height = 512;
+            histogram = new Histogram(
+                    new HistParams()
+                            .setWidth(width)
+                            .setHeight(height)
+
+                            .setFrameRect(new Rectangle2D.Double(
+                                    .06 * width,
+                                    .13 * height,
+                                    .88 * width,
+                                    .81 * height))
+                            .setBgrColor(Color.LIGHT_GRAY)
+                            .setHistFrameColor(Color.WHITE)
+                            .setHistFrameBorderWidth(10)
+                            .setHistFrameBorderColor(Color.GRAY)
+            );
         }
 
         public void acceptNextValue(double value) {
@@ -64,67 +98,108 @@ public class Task_1_1_32 {
         private int calcValueIndex(double value) {
             return (int) ((value - l) / diff * n);
         }
-
     }
 
     public static class Histogram {
 
-        public static final double HIST_WINDOW_FRAME_LEFT = .1;
-        public static final double HIST_WINDOW_FRAME_RIGHT = .9;
-        public static final double HIST_WINDOW_FRAME_BOTTOM = .08;
-        public static final double HIST_WINDOW_FRAME_TOP = .94;
+        private final HistParams histParams;
+        private final Point2D.Double factors;
 
-        public static final Color HIST_BACKGROUND_COLOR = Color.LIGHT_GRAY;
-        public static final Color HIST_WINDOW_COLOR = Color.WHITE;
-
-        private final int width;
-        private final int height;
-        private final double halfWidth;
-        private final double halfHeight;
-
-        public Histogram(int width, int height) {
-            this.width = width;
-            this.height = height;
-            halfWidth = width / 2.0;
-            halfHeight = height / 2.0;
-            setCanvasSizes(width, height);
+        public Histogram(HistParams histParams) {
+            this.histParams = histParams;
+            factors = new Point2D.Double(1 / histParams.getWidth(), 1 / histParams.getHeight());
+            StdDraw.setCanvasSize((int) histParams.getWidth(), (int) histParams.getHeight());
             repaint();
         }
 
-        public static void setCanvasSizes(int width, int height) {
-            StdDraw.setCanvasSize(width, height);
-        }
-
         public final void repaint() {
-            drawBackgroundInit(halfWidth, halfHeight);
-            drawHistWindowRect();
+            drawBackgroundInit();
+            drawHistWindow();
         }
 
-        private void drawBackgroundInit(double hW, double hH) {
-            StdDraw.setPenColor(HIST_BACKGROUND_COLOR);
+        private void drawBackgroundInit() {
+            StdDraw.setPenColor(histParams.getBgrColor());
             StdDraw.filledRectangle(.5, .5, .5, .5);
         }
 
-        private void drawHistWindowRect() {
-            StdDraw.setPenColor(HIST_WINDOW_COLOR);
-            double halfWidth = calcHalfWidthBySideCrd(HIST_WINDOW_FRAME_LEFT, HIST_WINDOW_FRAME_RIGHT);
-            //noinspection SuspiciousNameCombination
-            double halfHeight = calcHalfWidthBySideCrd(HIST_WINDOW_FRAME_BOTTOM, HIST_WINDOW_FRAME_TOP);
-            double centerX = HIST_WINDOW_FRAME_LEFT + halfWidth;
-            double centerY = HIST_WINDOW_FRAME_BOTTOM + halfHeight;
-
-            StdDraw.filledRectangle(centerX, centerY, halfWidth, halfHeight);
+        private void drawHistWindow() {
+            StdRectParams params = calcStdRectParam(histParams.getFrameRect(), histParams.getHistFrameBorderWidth(),
+                                                    factors.x, factors.y);
+            drawHistWindowBgr(params);
+            drawHistWindowBorder(params);
         }
 
-//        private double calcRectCenterBySideCrd(double left, double right) {
-//            return left + calcHalfWidthBySideCrd(left, right);
-//        }
+        private void drawHistWindowBgr(StdRectParams params) {
+            StdDraw.setPenColor(histParams.getHistFrameColor());
+            StdDraw.filledRectangle(params.cX, params.cY, params.hW, params.hH);
+            StdDraw.setPenColor(StdDraw.BLACK);
+        }
 
-        private double calcHalfWidthBySideCrd(double left, double right) {
-            return (right - left) / 2;
+        private void drawHistWindowBorder(StdRectParams params) {
+            StdDraw.setPenColor(histParams.getHistFrameBorderColor());
+            double radius = toStdPen(histParams.getHistFrameBorderWidth());
+            StdDraw.setPenRadius(radius);
+            StdDraw.rectangle(params.cX, params.cY, params.hW, params.hH);
+        }
+
+        private double toStd(double realSize, double max) {
+            return realSize / max;
         }
 
     }
+
+    @Data
+    @Accessors(chain = true)
+    public static class HistParams {
+        private double width;
+        private double height;
+        private Rectangle2D.Double frameRect;
+
+        private Color bgrColor;
+        private Color histFrameColor;
+        private double histFrameBorderWidth;
+        private Color histFrameBorderColor;
+    }
+
+    /**
+     * Parameters for {@link StdDraw#rectangle} method
+     */
+    @Data
+    @AllArgsConstructor
+    public static class StdRectParams {
+        /** the x-coordinate of the center of the rectangle */
+        private final double cX;
+        /** the y-coordinate of the center of the rectangle */
+        private final double cY;
+        /** one half the width of the rectangle */
+        private final double hW;
+        /** one half the height of the rectangle */
+        private final double hH;
+    }
+
+
+    public static abstract class HistArea {
+
+        private final Rectangle2D.Double rect;
+
+        protected HistArea(Rectangle2D.Double rect) {
+            this.rect = rect;
+        }
+
+        public void drawDebugRect() {
+            StdDraw.setPenRadius(.002);
+//            StdDraw.rectangle();
+        }
+    }
+    // TODO: 6/27/20 Create 4 classes-descendants of HistArea:
+    //  CaptionArea
+    //  YAxisArea
+    //  XAxisArea
+    //  MainArea
+    // TODO: 6/27/20 Draw debug rects bounding them and fix them to fit their proper space
+
+
+
 
 
 }
