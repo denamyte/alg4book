@@ -13,8 +13,9 @@ import java.awt.*;
 public abstract class HistArea {
 
     private static final boolean debug = true;
-    private final Rect rect;
-    private final Point factors;
+    private static final boolean content = true;
+    final Rect rect;
+    final Point factors;
 
     protected HistArea(Rect rect, Point factors) {
         this.rect = rect;
@@ -23,7 +24,7 @@ public abstract class HistArea {
 
     public void draw() {
         if (debug) drawDebugRect();
-        else drawContent();
+        if (content) drawContent();
     }
 
     public void drawDebugRect() {
@@ -33,7 +34,7 @@ public abstract class HistArea {
         StdDraw.rectangle(rectParams.c.x, rectParams.c.y, rectParams.hW, rectParams.hH);
     }
 
-    public abstract void drawContent();
+    abstract void drawContent();
 
     public abstract Color getDebugColor();
 }

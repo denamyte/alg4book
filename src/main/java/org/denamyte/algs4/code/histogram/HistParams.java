@@ -9,12 +9,15 @@ import java.awt.*;
 @Data
 @Accessors(chain = true)
 public class HistParams {
-    private double width;
-    private double height;
+    private double scrWidth;
+    private double scrHeight;
     private Rect frameRect;
 
     private Color bgrColor;
     private Color histFrameColor;
     private double histFrameBorderWidth;
     private Color histFrameBorderColor;
+
+    private Color captionColor;
+    private String captionText;
 }

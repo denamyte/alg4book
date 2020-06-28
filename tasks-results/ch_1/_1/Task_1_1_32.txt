@@ -1,1 +1,3 @@
+map of {family="SansSerif", weight=1.0*, width=1.0*, posture=0.0*, size=16.0, transform=null*, superscript=0*, tracking=0.0*[btx=null, ctx=null]}
+java.awt.Font[family=SansSerif,name=SansSerif,style=plain,size=16]
 Enter next double in the interval (0.000000, 1.000000)

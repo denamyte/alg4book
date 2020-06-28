@@ -2,9 +2,9 @@ package org.denamyte.algs4.tasks.ch_1._1;
 
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
+import org.denamyte.algs4.code.common.Rect;
 import org.denamyte.algs4.code.histogram.HistParams;
 import org.denamyte.algs4.code.histogram.Histogram;
-import org.denamyte.algs4.code.common.Rect;
 import org.denamyte.algs4.code.utils.Utils;
 
 import java.awt.*;
@@ -50,21 +50,26 @@ public class Task_1_1_32 {
             this.r = r;
             diff = r - l;
             hist = new int[n];
-            double width = 1024, height = 512;
+            double width = 1024 + 256, height = 512 + 256;
+            double histFrameX = 1 / 12.0 * width;
+            double histFrameY = 1 / 10.0 * width;
             histogram = new Histogram(
                     new HistParams()
-                            .setWidth(width)
-                            .setHeight(height)
+                            .setScrWidth(width)
+                            .setScrHeight(height)
 
                             .setFrameRect(new Rect(
-                                    .06 * width,
-                                    .13 * height,
-                                    .88 * width,
-                                    .81 * height))
+                                    histFrameX, //.06 * width,
+                                    histFrameY, //.13 * height,
+                                    width - histFrameX - 50,
+                                    height - histFrameY - 40))
                             .setBgrColor(Color.LIGHT_GRAY)
                             .setHistFrameColor(Color.WHITE)
                             .setHistFrameBorderWidth(10)
                             .setHistFrameBorderColor(Color.GRAY)
+
+                            .setCaptionColor(Color.DARK_GRAY)
+                            .setCaptionText("Frequency Histogram (Algorithms, 4-th ed., p. 60, Task 1.1.32")
             );
         }
 
@@ -83,13 +88,7 @@ public class Task_1_1_32 {
             return (int) ((value - l) / diff * n);
         }
     }
-
     // TODO: 6/27/20 Create 4 classes-descendants of HistArea:
-    //  CaptionArea
-    //  YAxisArea
-    //  XAxisArea
     //  MainArea
-    // TODO: 6/27/20 Draw debug rects bounding them and fix them to fit their proper space
-
 
 }
