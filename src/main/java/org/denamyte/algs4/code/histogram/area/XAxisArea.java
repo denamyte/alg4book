@@ -5,6 +5,9 @@ import org.denamyte.algs4.code.common.Rect;
 
 import java.awt.*;
 
+/**
+ * A rectangular area on the bottom of the X-axis of the histogram
+ */
 public class XAxisArea extends HistArea {
 
     public XAxisArea(Rect rect, Point factors) {

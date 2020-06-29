@@ -57,18 +57,18 @@ public class Task_1_1_32 {
                     new HistParams()
                             .setScrWidth(width)
                             .setScrHeight(height)
+                            .setBgrColor(new Color(220, 220, 220))
 
-                            .setFrameRect(new Rect(
+                            .setMainAreaRect(new Rect(
                                     histFrameX, //.06 * width,
                                     histFrameY, //.13 * height,
                                     width - histFrameX - 50,
                                     height - histFrameY - 40))
-                            .setBgrColor(Color.LIGHT_GRAY)
-                            .setHistFrameColor(Color.WHITE)
-                            .setHistFrameBorderWidth(10)
-                            .setHistFrameBorderColor(Color.GRAY)
+                            .setMainAreaBgrColor(Color.WHITE)
+                            .setMainAreaBorderWidth(10)
+                            .setMainAreaBorderColor(Color.GRAY)
 
-                            .setCaptionColor(Color.DARK_GRAY)
+                            .setCaptionColor(new Color(120, 120, 50))
                             .setCaptionText("Frequency Histogram (Algorithms, 4-th ed., p. 60, Task 1.1.32")
             );
         }

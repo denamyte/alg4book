@@ -5,6 +5,9 @@ import org.denamyte.algs4.code.common.Rect;
 
 import java.awt.*;
 
+/**
+ * A rectangular area on the left of the Y-axis of the histogram
+ */
  public class YAxisArea extends HistArea {
      public YAxisArea(Rect rect, Point factors) {
          super(rect, factors);

@@ -11,12 +11,12 @@ import java.awt.*;
 public class HistParams {
     private double scrWidth;
     private double scrHeight;
-    private Rect frameRect;
-
     private Color bgrColor;
-    private Color histFrameColor;
-    private double histFrameBorderWidth;
-    private Color histFrameBorderColor;
+
+    private Rect mainAreaRect;
+    private Color mainAreaBgrColor;
+    private double mainAreaBorderWidth;
+    private Color mainAreaBorderColor;
 
     private Color captionColor;
     private String captionText;
