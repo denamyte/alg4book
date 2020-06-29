@@ -1,7 +1,7 @@
 package org.denamyte.algs4.tasks.ch_1._1;
 
 import edu.princeton.cs.algs4.StdOut;
-import org.denamyte.algs4.code.utils.Utils;
+import org.denamyte.algs4.code.common.utils.Utils;
 
 import java.util.Arrays;
 import java.util.Collection;

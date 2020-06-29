@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdOut;
 import org.denamyte.algs4.code.common.Rect;
 import org.denamyte.algs4.code.histogram.HistParams;
 import org.denamyte.algs4.code.histogram.Histogram;
-import org.denamyte.algs4.code.utils.Utils;
+import org.denamyte.algs4.code.common.utils.Utils;
 
 import java.awt.*;
 import java.util.Arrays;

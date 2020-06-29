@@ -1,4 +1,4 @@
-package org.denamyte.algs4.code.utils;
+package org.denamyte.algs4.code.common.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

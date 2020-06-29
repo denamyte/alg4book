@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdRandom;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.denamyte.algs4.code.utils.Utils;
+import org.denamyte.algs4.code.common.utils.Utils;
 
 /**
  * <img src="../../docs/ch_1/_1/Task.1.1.31.png" alt="Task screenshot"><br>
