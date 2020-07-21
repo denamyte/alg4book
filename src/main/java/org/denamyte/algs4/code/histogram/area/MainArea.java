@@ -10,12 +10,14 @@ public class MainArea extends HistArea {
     private final double borderWidth;
     private final Color borderColor;
     private final Color bgrColor;
+    private final boolean drawHorzLines;
 
-    public MainArea(Rect rect, Point factors, double borderWidth, Color borderColor, Color bgrColor) {
+    public MainArea(Rect rect, Point factors, double borderWidth, Color borderColor, Color bgrColor, boolean drawHorzLines) {
         super(rect, factors);
         this.borderWidth = borderWidth;
         this.borderColor = borderColor;
         this.bgrColor = bgrColor;
+        this.drawHorzLines = drawHorzLines;
     }
 
     @Override

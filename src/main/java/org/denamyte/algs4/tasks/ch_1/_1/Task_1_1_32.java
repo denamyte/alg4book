@@ -3,11 +3,14 @@ package org.denamyte.algs4.tasks.ch_1._1;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import org.denamyte.algs4.code.common.Rect;
+import org.denamyte.algs4.code.histogram.ColumnSettings;
+import org.denamyte.algs4.code.histogram.HistData;
 import org.denamyte.algs4.code.histogram.HistParams;
 import org.denamyte.algs4.code.histogram.Histogram;
 import org.denamyte.algs4.code.common.utils.Utils;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -54,22 +57,41 @@ public class Task_1_1_32 {
             double histFrameX = 1 / 12.0 * width;
             double histFrameY = 1 / 10.0 * width;
             histogram = new Histogram(
-                    new HistParams()
-                            .setScrWidth(width)
-                            .setScrHeight(height)
-                            .setBgrColor(new Color(220, 220, 220))
+                    HistParams.builder()
+                            .scrWidth(width)
+                            .scrHeight(height)
+                            .bgrColor(new Color(220, 220, 220))
 
-                            .setMainAreaRect(new Rect(
+                            .mainAreaRect(new Rect(
                                     histFrameX, //.06 * width,
                                     histFrameY, //.13 * height,
                                     width - histFrameX - 50,
                                     height - histFrameY - 40))
-                            .setMainAreaBgrColor(Color.WHITE)
-                            .setMainAreaBorderWidth(4)
-                            .setMainAreaBorderColor(Color.GRAY)
+                            .mainAreaBgrColor(Color.WHITE)
+                            .mainAreaBorderWidth(4)
+                            .mainAreaBorderColor(Color.GRAY)
+                            .drawHorzLinesInMainArea(true)
 
-                            .setCaptionColor(new Color(120, 120, 50))
-                            .setCaptionText("Frequency Histogram (Algorithms, 4-th ed., p. 60, Task 1.1.32")
+                            .captionColor(new Color(120, 120, 50))
+                            .captionText("Frequency Histogram (Algorithms, 4-th ed., p. 60, Task 1.1.32")
+
+                            .columnSettings(
+                                    ColumnSettings.builder()
+                                            .paddingSide(.3)
+                                            .paddingBetween(.3)
+                                            .barColor(Color.BLACK)
+                                            .borders(true)
+                                            .borderSizeRelative(true)
+                                            .borderSize(.1)
+                                            .build()
+                            )
+                            .build(),
+                    new HistData(new ArrayList<>(
+                            Arrays.asList(
+                                    new HistData.HistUnit("value 1", 1),
+                                    new HistData.HistUnit("value 2", 12),
+                                    new HistData.HistUnit("value 3", 5)
+                            )))
             );
         }
 
@@ -81,7 +103,8 @@ public class Task_1_1_32 {
                 }
             }
             StdOut.println(Arrays.toString(hist));
-            histogram.repaint();
+            // TODO: 7/21/20 Create a new HistData.HistUnit from hist[], pass this data to the histogram.
+//            histogram.repaint();
         }
 
         private int calcValueIndex(double value) {
