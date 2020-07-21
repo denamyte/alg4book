@@ -65,7 +65,7 @@ public class Task_1_1_32 {
                                     width - histFrameX - 50,
                                     height - histFrameY - 40))
                             .setMainAreaBgrColor(Color.WHITE)
-                            .setMainAreaBorderWidth(10)
+                            .setMainAreaBorderWidth(4)
                             .setMainAreaBorderColor(Color.GRAY)
 
                             .setCaptionColor(new Color(120, 120, 50))

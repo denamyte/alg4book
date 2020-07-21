@@ -10,8 +10,8 @@ import java.awt.*;
 @Data
 public abstract class HistArea {
 
-    private static final double debugRectWidth = 2.5;
-    private static final boolean debug = true;
+    private static final double debugRectWidth = 1;
+    private static final boolean debug = false;
     private static final boolean content = true;
     final Rect rect;
     final Point factors;

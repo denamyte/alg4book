@@ -23,21 +23,20 @@ public class Histogram {
                                             factors, histParams.getBgrColor());
         mainArea = new MainArea(histParams.getMainAreaRect(), factors, histParams.getMainAreaBorderWidth(),
                                 histParams.getMainAreaBorderColor(), histParams.getMainAreaBgrColor());
-        xAxis = new XAxisArea(new Rect(fRect.x + bWidth, 0, fRect.width - bWidth * 2, fRect.y),
-                              factors);
-        captionArea = new CaptionArea(new Rect(fRect.x + bWidth, fRect.y + fRect.height, fRect.width - bWidth * 2, histParams.getScrHeight() - (fRect.y + fRect.height)),
-                                      factors, histParams.getCaptionColor(), histParams.getCaptionText());
-        yAxis = new YAxisArea(new Rect(0, fRect.y + bWidth, fRect.x, fRect.height - bWidth * 2),
-                              factors);
+        xAxis = new XAxisArea(new Rect(fRect.x + bWidth, 0, fRect.width - bWidth * 2, fRect.y), factors);
+        captionArea = new CaptionArea(new Rect(fRect.x + bWidth, fRect.y + fRect.height
+                , fRect.width - bWidth * 2, histParams.getScrHeight() - (fRect.y + fRect.height))
+                , factors, histParams.getCaptionColor(), histParams.getCaptionText());
+        yAxis = new YAxisArea(new Rect(0, fRect.y + bWidth, fRect.x, fRect.height - bWidth * 2), factors);
         repaint();
     }
 
     public final void repaint() {
         backgroundArea.draw();
-        mainArea.draw();
         xAxis.draw();
         yAxis.draw();
         captionArea.draw();
+        mainArea.draw();
     }
 
     private double toStd(double realSize, double max) {

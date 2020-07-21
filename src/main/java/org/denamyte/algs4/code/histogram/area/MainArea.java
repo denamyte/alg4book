@@ -22,18 +22,11 @@ public class MainArea extends HistArea {
     void drawContent() {
         HistUtils.calcAndPaintRect(bgrColor, rect, borderWidth, factors, true);
         HistUtils.calcAndPaintRect(borderColor, rect, borderWidth, factors, false);
-
-        // TODO: 6/29/20 remove this debug rect later
-        double diff = borderWidth + 2;
-        Rect contentRect = new Rect(rect.x + diff,
-                                    rect.y + diff,
-                                    rect.width - (diff) * 2,
-                                    rect.height - (diff) * 2);
-        HistUtils.calcAndPaintRect(Color.BLUE, contentRect, 2, factors, false);
     }
 
     @Override
     public Color getDebugColor() {
-        return new Color(0, 255, 200, 150).brighter();
+        return Color.WHITE;
+//        return new Color(0, 255, 200, 150).brighter();
     }
 }

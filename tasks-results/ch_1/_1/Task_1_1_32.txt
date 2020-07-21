@@ -1,1 +1,2 @@
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
 Enter next double in the interval (0.000000, 1.000000)
