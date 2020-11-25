@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//  /home/denamyte/shared/projects/study/coursera/princeton-alg/algorithms/alg4book/src/main/java/org/denamyte/hyperskill/files/dataset_91069.txt
+//  src/main/java/org/denamyte/hyperskill/files/dataset_91069.txt
 public class ReadingFiles_WorldPopulation {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(new File("/home/denamyte/shared/projects/study/coursera/princeton-alg/algorithms/alg4book/src/main/java/org/denamyte/hyperskill/files/dataset_91069.txt"))) {
