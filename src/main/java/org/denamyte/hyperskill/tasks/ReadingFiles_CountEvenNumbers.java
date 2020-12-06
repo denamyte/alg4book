@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-// src/main/java/org/denamyte/hyperskill/files/dataset_91065.txt
+// src/main/resources/hyperskill/ReadingFiles_CountEvenNumbers/dataset_91065.txt
 public class ReadingFiles_CountEvenNumbers {
     public static void main(String[] args) {
         String filePath = args[0];
