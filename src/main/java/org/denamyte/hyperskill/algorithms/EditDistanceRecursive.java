@@ -1,4 +1,4 @@
-package org.denamyte.other;
+package org.denamyte.hyperskill.algorithms;
 
 import java.util.Arrays;
 
