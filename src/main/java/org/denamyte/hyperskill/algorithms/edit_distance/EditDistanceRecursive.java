@@ -1,4 +1,4 @@
-package org.denamyte.hyperskill.algorithms;
+package org.denamyte.hyperskill.algorithms.edit_distance;
 
 import java.util.Arrays;
 
