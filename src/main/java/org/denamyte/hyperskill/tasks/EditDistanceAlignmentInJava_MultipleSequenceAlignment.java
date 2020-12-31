@@ -11,27 +11,27 @@ public class EditDistanceAlignmentInJava_MultipleSequenceAlignment {
                 ? 2 : 1;
     }
 
-//    public static void editDistanceMultipleDispatcher(String[] words) {
-//
-//    }
-
-    public static Alignment editDistanceAlignment(String s, String t) {
-        int[][] d = new int[s.length() + 1][t.length() + 1];
+    public static Alignment editDistanceAlignment(String s, String t, String u) {
+        int[][][] d = new int[s.length() + 1][t.length() + 1][u.length() + 1];
 
         for (int i = 0; i < s.length() + 1; i++) {
-            d[i][0] = i;
+            d[i][0][0] = i * 2;
+        }
+        for (int i = 0; i < t.length() + 1; i++) {
+            d[0][i][0] = i * 2;
+        }
+        for (int i = 0; i < u.length() + 1; i++) {
+            d[0][0][i] = i * 2;
         }
 
-        for (int j = 0; j < t.length() + 1; j++) {
-            d[0][j] = j;
-        }
-
-        for (int i = 1; i < s.length() + 1; i++) {
-            for (int j = 1; j < t.length() + 1; j++) {
-                int insCost = d[i][j - 1] + 1;
-                int delCost = d[i - 1][j] + 1;
-                int subCost = d[i - 1][j - 1] + match(s.charAt(i - 1), t.charAt(j - 1));
-                d[i][j] = Math.min(Math.min(insCost, delCost), subCost);
+        for (int si = 1; si < s.length() + 1; si++) {
+            for (int ti = 1; ti < t.length() + 1; ti++) {
+                for (int ui = 1; ui < u.length() + 1; ui++) {
+                    int insCost = d[si][ti - 1] + 1;
+                    int delCost = d[si - 1][ti] + 1;
+                    int subCost = d[si - 1][ti - 1] + match(s.charAt(si - 1), t.charAt(ti - 1));
+                    d[si][ti] = Math.min(Math.min(insCost, delCost), subCost);
+                }
             }
         }
 
