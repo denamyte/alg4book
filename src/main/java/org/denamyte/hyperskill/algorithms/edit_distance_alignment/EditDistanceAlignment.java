@@ -50,7 +50,7 @@ public class EditDistanceAlignment {
                 ssBuilder.append("-");
                 ttBuilder.append(t.charAt(j - 1));
                 j -= 1;
-            } else if (/*i > 0 && */d[i][j] == d[i - 1][j] + 1) {
+            } else if (i > 0 && d[i][j] == d[i - 1][j] + 1) {
                 ssBuilder.append(s.charAt(i - 1));
                 ttBuilder.append("-");
                 i -= 1;
