@@ -1,5 +1,8 @@
 package org.denamyte.hyperskill.algorithms.edit_distance_alignment;
 
+/**
+ * <a href="https://hyperskill.org/learn/step/5702">Edit distance alignment in Java -> Finding an alignment using a scoring function</a>
+ */
 public class EditDistanceAlignmentWithCustomScoring {
 
     private final int insScore;
