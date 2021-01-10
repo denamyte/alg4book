@@ -1,0 +1,33 @@
+Edit distance alignment in Java -> An approximate matching
+EditDistanceAlignmentInJava_AnApproximateMatching
+
+    insertion/deletion: 3
+    substitution: 5 (for equal symbols use 0)
+
+cab
+abacabad
+->
+0
+cab
+cab
+[0, 0, 0, 0, 0, 0, 0, 0, 0]
+[3, 3, 3, 3, 0, 3, 3, 3, 3]
+[6, 3, 6, 3, 3, 0, 3, 3, 6]
+[9, 6, 3, 6, 6, 3, 0, 3, 6]
+
+
+hello
+greenyellowblue
+->
+3
+hello
+-ello
+
+Test #7 of 10 answer:
+->
+74
+attacgggtcct-a-catga-tgcgtggatatttatataaaaactctagtatt
+a-ta---gt-ctgagc-tgactg-g-gg-ta--tgtat-agaagtct-g--ct
+
+attacgggtcctacatgatgcgtggatatttatataaaaactctagtatt
+atagtctgagctgactggggtatgtatagaagtctgct
