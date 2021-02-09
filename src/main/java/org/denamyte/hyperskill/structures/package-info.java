@@ -1,0 +1,1 @@
+package org.denamyte.hyperskill.structures;
