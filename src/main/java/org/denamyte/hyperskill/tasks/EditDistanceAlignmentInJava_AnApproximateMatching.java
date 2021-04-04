@@ -1,6 +1,6 @@
 package org.denamyte.hyperskill.tasks;
 
-import org.denamyte.hyperskill.algorithms.edit_distance_alignment.EditDistanceAlignmentApproximateMatching;
+import org.denamyte.hyperskill.algorithms.string.edit_distance_alignment.EditDistanceAlignmentApproximateMatching;
 
 /**
  * Algorithm for approximate matching of a substring S in a string T

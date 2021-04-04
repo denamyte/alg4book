@@ -1,4 +1,4 @@
-package org.denamyte.hyperskill.algorithms.edit_distance;
+package org.denamyte.hyperskill.algorithms.string.edit_distance;
 
 import java.util.Scanner;
 

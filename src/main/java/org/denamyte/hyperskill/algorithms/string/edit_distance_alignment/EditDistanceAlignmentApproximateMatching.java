@@ -1,20 +1,14 @@
-package org.denamyte.hyperskill.algorithms.edit_distance_alignment;
+package org.denamyte.hyperskill.algorithms.string.edit_distance_alignment;
 
 /**
- * <a href="https://hyperskill.org/learn/step/5702">Edit distance alignment in Java -> Finding an alignment using a scoring function</a>
+ * Algorithm for approximate matching of a substring S in a string T
  */
-public class EditDistanceAlignmentWithCustomScoring {
+public class EditDistanceAlignmentApproximateMatching {
 
     private final int insScore;
     private final int subScore;
 
-    public static void main(String[] args) {
-        EditDistanceAlignmentWithCustomScoring eda = new EditDistanceAlignmentWithCustomScoring(2, 3);
-        System.out.println(eda.calcAlignment("editing", "distance"));
-        System.out.println(eda.calcAlignment("aaabbb", "bbbaaa"));
-    }
-
-    public EditDistanceAlignmentWithCustomScoring(int insScore, int subScore) {
+    public EditDistanceAlignmentApproximateMatching(int insScore, int subScore) {
         this.insScore = insScore;
         this.subScore = subScore;
     }
@@ -28,10 +22,6 @@ public class EditDistanceAlignmentWithCustomScoring {
 
         for (int i = 0; i < s.length() + 1; i++) {
             d[i][0] = insScore * i;
-        }
-
-        for (int j = 0; j < t.length() + 1; j++) {
-            d[0][j] = insScore * j;
         }
 
         for (int i = 1; i < s.length() + 1; i++) {
@@ -49,10 +39,11 @@ public class EditDistanceAlignmentWithCustomScoring {
         StringBuilder ssBuilder = new StringBuilder();
         StringBuilder ttBuilder = new StringBuilder();
         int i = s.length();
-        int j = t.length();
+        int j = findStartingIndexJ(d[i]);
+        int distance = d[i][j];
 
-        while (i > 0 || j > 0) {
-            if (i > 0 && j > 0 && d[i][j] == d[i - 1][j - 1] + match(s.charAt(i - 1), t.charAt(j - 1))) {
+        while (i > 0) {
+            if (/*i > 0 && */j > 0 && d[i][j] == d[i - 1][j - 1] + match(s.charAt(i - 1), t.charAt(j - 1))) {
                 ssBuilder.append(s.charAt(i - 1));
                 ttBuilder.append(t.charAt(j - 1));
                 i -= 1;
@@ -61,7 +52,7 @@ public class EditDistanceAlignmentWithCustomScoring {
                 ssBuilder.append("-");
                 ttBuilder.append(t.charAt(j - 1));
                 j -= 1;
-            } else if (i > 0 && d[i][j] == d[i - 1][j] + insScore) {
+            } else if (/*i > 0 && */d[i][j] == d[i - 1][j] + insScore) {
                 ssBuilder.append(s.charAt(i - 1));
                 ttBuilder.append("-");
                 i -= 1;
@@ -71,6 +62,24 @@ public class EditDistanceAlignmentWithCustomScoring {
         String ss = ssBuilder.reverse().toString();
         String tt = ttBuilder.reverse().toString();
 
-        return new Alignment(d[s.length()][t.length()], ss, tt);
+        return new Alignment(distance, ss, tt);
+    }
+
+    /**
+     * Finds the index with the smallest value in an array of integers
+     * @param row The matrix to look for an index
+     * @return The index with the smallest value.
+     */
+    private int findStartingIndexJ(int[] row) {
+        int minValue = Integer.MAX_VALUE;
+        int maxJ = 0;
+        for (int j = 0; j < row.length; j++) {
+            if (row[j] < minValue) {
+                minValue = row[j];
+                maxJ = j;
+            }
+        }
+        return maxJ;
     }
 }
+

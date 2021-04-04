@@ -1,4 +1,4 @@
-package org.denamyte.hyperskill.algorithms.edit_distance_alignment;
+package org.denamyte.hyperskill.algorithms.string.edit_distance_alignment;
 
 public class EditDistanceAlignment {
 
