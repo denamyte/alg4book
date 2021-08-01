@@ -1,4 +1,4 @@
-package org.denamyte.hyperskill.tasks;
+package org.denamyte.hyperskill.tasks.other;
 
 public class Polymorphism_NumberGenerators {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.denamyte.hyperskill.tasks;
+package org.denamyte.hyperskill.tasks.other;
 
 import org.denamyte.hyperskill.algorithms.string.edit_distance_alignment.EditDistanceAlignmentApproximateMatching;
 

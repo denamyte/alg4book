@@ -1,4 +1,4 @@
-package org.denamyte.hyperskill.tasks;
+package org.denamyte.hyperskill.tasks.other;
 
 import java.io.File;
 import java.io.FileNotFoundException;
