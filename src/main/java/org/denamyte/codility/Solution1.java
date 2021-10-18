@@ -1,4 +1,4 @@
-package org.denamyte.hyperskill.tasks.codility;
+package org.denamyte.codility;
 
 // you can also use imports, for example:
 // import java.util.*;
