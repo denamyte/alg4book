@@ -11,10 +11,10 @@ public class TricoloringArray {
         Stream.of(new int[]{3, 7, 2, 5, 4},
                   new int[]{3, 1, 2, 2, 1},
                   new int[]{3, 1, 1, 3, 1},
-                  new int[]{100},
-                  new int[]{100, -130},
-                  new int[]{100, -130, 1, 51, 2, 25, 5, -99, 10, -9, 3, 14, -7, 49, 14, 143, -120, 8, -1},
-                  new int[]{100, -130, 1, 51, 2, 25, 5, -99, 10, -9, 3, 14, -7, 49, 14, 143, -120, 8, -1, -1},
+                  new int[]{100},  // imp
+                  new int[]{100, -130},  // imp
+                  new int[]{100, -130, 1, 51, 2, 25, 5, -99, 10, -9, 3, 14, -7, 49, 14, 143, -120, 8, -1},  // imp
+                  new int[]{100, -130, 1, 51, 2, 25, 5, -99, 10, -9, 3, 14, -7, 49, 14, 143, -120, 8, -1, -1},  // imp
                   new int[]{100, -130, 1, 51, 2, 25, 5, -99, 10, -9, 3, 14, -7, 49, 14, 143, -120, 8, -1, -1, -1},
                   new int[]{100, -130, 1, 51, 2, 25, 5, -99, 10, -9, 3, 14, -7, 49, 14, 143, -120, 8},
                   new int[]{1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 3},
@@ -43,11 +43,11 @@ class Solution {
         if (N <= 2) {
             return "impossible";
         }
+        colorNumber = colorMap.size();
         int sum = Arrays.stream(A).sum();
-        if (sum % 3 != 0) {
+        if (sum % colorNumber != 0) {
             return "impossible";
         }
-        colorNumber = colorMap.size();
         colorSum = sum / colorNumber;
 
         final int[] colors = arrangeColors(new int[N], 1, 0, 0, 0);
